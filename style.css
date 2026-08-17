@@ -388,7 +388,7 @@ footer { background: var(--deep-blue); color: var(--white); text-align: center; 
 @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
 /* ========================================================
-   RESPONSIVE INSTAGRAM IFRAME & RESPONSIVE CONTACT
+   RESPONSIVE INSTAGRAM IFRAME 
    ======================================================== */
 .event-img-wrapper iframe {
     width: 100% !important;
@@ -398,16 +398,187 @@ footer { background: var(--deep-blue); color: var(--white); text-align: center; 
     background-color: #fff;
 }
 
-@media screen and (max-width: 768px) {
+/* =======================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   Mantra ajaib agar website tidak hancur di layar HP 🐈‍⬛🐾
+   ======================================================= */
+@media screen and (max-width: 850px) {
+    /* Penyesuaian Iframe Instagram */
     .event-img-wrapper iframe {
         height: 400px !important;
+    }
+
+    /* Navbar menyesuaikan tengah */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Hero Section digulung ke bawah (Teks di atas, Foto di bawah) */
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 40px;
+        min-height: auto;
+    }
+    .hero-text {
+        max-width: 100%;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .image-frame {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    /* About Section ditumpuk */
+    .about-tools-section {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    .about-column, .tools-column {
+        width: 100%;
+        padding: 0;
+        border-left: none; /* Hilangkan garis pembatas */
+    }
+
+    /* Experience Card Foto ditumpuk */
+    .work-experience-section {
+        padding: 40px 20px;
+    }
+    .experience-card {
+        padding: 25px;
+    }
+    .exp-photos {
+        flex-direction: column;
+        align-items: center;
+    }
+    .exp-photos .gallery-thumb {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Projects ditumpuk memanjang */
+    .projects-section {
+        padding: 40px 20px;
+    }
+    .project-feature {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    .project-info, .project-image-box {
+        width: 100%;
+        padding: 0;
+    }
+    .document-gallery, .ui-gallery {
+        grid-template-columns: 1fr 1fr; /* Jadi 2 kolom foto di HP besar/Tablet */
+    }
+
+    /* Grid Other Projects jadi 1 kolom */
+    .other-projects-section {
+        padding: 40px 20px;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .grid-card {
+        width: 100%;
+    }
+
+    /* Organisasi & Event (Zig-zag dimatikan, semua jadi lurus) */
+    .organization-section {
+        padding: 40px 20px;
+    }
+    .org-card-centered {
+        padding: 25px;
+    }
+    .event-list-card, 
+    .event-list-card.reverse-layout {
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+    .event-list-content, .event-list-image {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Certificates jadi 2 baris di tablet */
+    .certificate-section {
+        padding: 40px 20px;
+    }
+    .cert-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .cert-item {
+        width: 100%;
+        min-width: unset;
+    }
+
+    /* Contact Section dirapikan */
+    .contact-section {
+        padding: 40px 20px;
     }
     .contact-premium-box {
         flex-direction: column;
         text-align: center;
         padding: 30px;
+        gap: 20px;
     }
-    .contact-left { margin-bottom: 20px; }
-    .role-badges { justify-content: center; }
-    .availability-box { border-left: none; border-top: 4px solid var(--soft-pink); border-radius: 0 0 8px 8px; text-align: left; }
+    .contact-left {
+        margin-bottom: 20px;
+    }
+    .role-badges {
+        justify-content: center;
+    }
+    .availability-box {
+        border-left: none;
+        border-top: 4px solid var(--soft-pink);
+        border-radius: 0 0 8px 8px;
+        text-align: left;
+    }
+    .contact-links-grid {
+        grid-template-columns: 1fr; /* Tombol kontak jadi bersusun ke bawah */
+    }
+}
+
+/* =======================================================
+   Penyesuaian Ekstra untuk Layar HP yang sangat kecil (di bawah 500px)
+   ======================================================= */
+@media screen and (max-width: 500px) {
+    .main-roles {
+        font-size: 28px;
+    }
+    .greeting {
+        font-size: 18px;
+    }
+    .cert-grid {
+        grid-template-columns: 1fr; /* Sertifikat jadi 1 kolom di HP kecil */
+    }
+    .document-gallery, .ui-gallery {
+        grid-template-columns: 1fr; /* Foto project jadi 1 kolom bersusun ke bawah */
+    }
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+    .image-frame {
+        width: 200px;
+        height: 200px;
+    }
+    .frame-cat {
+        width: 70px;
+        left: -10px;
+    }
 }
