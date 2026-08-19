@@ -78,8 +78,8 @@ body {
 .greeting { font-size: 20px; color: var(--soft-pink); margin-bottom: 10px; }
 
 .main-roles {
-    font-size: 42px;
-    line-height: 1.4;
+    font-size: 32px; /* Ukuran dikecilkan agar tidak terlalu padat */
+    line-height: 1.5; /* Jarak antar baris diperlebar sedikit agar nyaman dibaca */
     margin-bottom: 20px;
     color: var(--white);
     letter-spacing: 0.5px;
@@ -558,7 +558,7 @@ footer { background: var(--deep-blue); color: var(--white); text-align: center; 
    ======================================================= */
 @media screen and (max-width: 500px) {
     .main-roles {
-        font-size: 28px;
+        font-size: 22px; /* Ukuran teks role jauh lebih kecil agar rapi di HP */
     }
     .greeting {
         font-size: 18px;
